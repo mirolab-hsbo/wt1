@@ -1,0 +1,13 @@
+<html>
+<body>
+	<button id="main-btn">Klick mich nicht</button>
+	<script type="text/javascript">
+		function showText(){
+			alert("Der Button wurde unrechtmäßig geklickt!")
+		}
+
+		var el = document.getElementById("main-btn")
+		el.addEventListener('click', showText)
+	</script>
+</body>
+</html>
