@@ -1,0 +1,14 @@
+{
+    "students": [
+        {
+            "matrnr": 1,
+            "name": "Max Mustermann",
+            "semester": 1
+        },
+        {
+            "matrnr": 2,
+            "name": "Erika Mustermann",
+            "semester": 3
+        }
+    ]
+}
