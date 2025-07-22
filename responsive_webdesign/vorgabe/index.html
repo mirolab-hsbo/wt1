@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie - Hilfsorganisation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Unsere Arbeit in Bildern</h1>
+    <p>Einblicke in unsere Projekte weltweit</p>
+    <button class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Neuigkeiten</a></li>
+        <li><a href="#">Über den Verein</a></li>
+        <li><a href="#">Über unsere Projekte</a></li>
+        <li><a href="#">Spenden</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="gallery">
+    <div class="grid-item vertical"><img src="bilder/bild1.jpg" title="Katastrophenhilfe"/></div>
+    <div class="grid-item"><img src="bilder/bild2.jpg" title="Plastik-Sammelaktion" /></div>
+    <div class="grid-item"><img src="bilder/bild4.jpg" title="Ausbildung von Freiwilligen" /></div>
+    <div class="grid-item"><img src="bilder/bild5.jpg" title="Kinder im Unterricht" /></div>
+    <div class="grid-item"><img src="bilder/bild6.jpg" title="Tierreservate und Tierhilfe" /></div>
+  </section>
+
+  <section id="team">
+    <h2>Unser Team</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="bilder/person1.png" title="Anna - Projektleiterin" />
+        <h3>Anna</h3>
+        <p>Leitet unsere Bildungsprojekte in Ostafrika.</p>
+      </div>
+      <div class="team-member">
+        <img src="bilder/person2.png" title="Ben - Logistik" />
+        <h3>Ben</h3>
+        <p>Koordiniert die Notfallhilfe weltweit.</p>
+      </div>
+      <div class="team-member">
+        <img src="bilder/person3.png" title="Maya - Kommunikation" />
+        <h3>Maya</h3>
+        <p>Erzählt die Geschichten unserer Helfer:innen.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  </script>
+</body>
+
+</html>
