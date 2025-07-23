@@ -20,21 +20,26 @@ header {
   display: none;
 }
 
+/* Aufgabe 6 */
+/*
 .nav {
   min-width: 650px;
 }
+*/
 
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
   margin-top: 3em;
+  /* Aufgabe 6 */
   /* neu*/
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
+/* Aufgabe 6 */
 /* 
 .nav-list li {
   display: inline;
@@ -49,13 +54,15 @@ header {
 
 #gallery {
   padding: 2rem;
+  /* Aufgabe 7 */
   /*   width: 100%; */
   /* neu */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr; /* alternativ: repeat(3, 1fr); */
   gap: 1rem;
 }
 
+/* Aufgabe 7 */
 /*
 .grid-item{
   width: 30%;
@@ -74,6 +81,7 @@ header {
   transition: transform 0.3s ease;
 }
 
+/* Aufgabe 7 */
 /* neu */
 .grid-item.vertical {
   grid-row: span 2;
@@ -87,13 +95,14 @@ header {
   background-color: #ffffff;
   padding: 2rem;
   text-align: center;
-  /* clear: both; */
+  clear: both;
 }
 
 #team h2 {
   margin-bottom: 2rem;
 }
 
+/* Aufgabe 4 */
 .team-container {
   /*
   margin-left: auto;
@@ -114,11 +123,7 @@ header {
   max-width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  /*   display: table-cell; */
-  /* neu */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: table-cell;
 }
 
 .team-member img {
@@ -133,11 +138,11 @@ header {
   transform: scale(1.05);
 }
 
-
+/* Aufgabe 8 */
 /* Gallerie */
 @media (max-width: 900px) {
   #gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -151,17 +156,20 @@ header {
 /* Menü */
 @media (max-width: 700px) {
   .nav-list {
+    display: none; /* Aufgabe 3 */
+    /* ab hier: Aufgabe 5 */
     flex-direction: column;
-    display: none;
     background-color: #03283b;
     margin-top: 1em;
     padding: 1em;
   }
 
+  /* Aufgabe 5 */
   .nav.open .nav-list {
     display: flex;
   }
 
+  /* Aufgabe 3 */
   .menu-toggle {
     display: block;
   }
