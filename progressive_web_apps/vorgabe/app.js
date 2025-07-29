@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dataList.innerHTML = ''
     }
 
-    function fetchAndSendNewEntry() {
+    function checkForUpdate() {
         fetch("https://wt1.mirolab.hs-bochum.de/update.php")
             .then(function (response) { return response.json() })
             .then(function (data) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function scheduleRandomSync() {
         const randomDelay = Math.floor(Math.random() * (10 - 5 + 1) + 2) * 1000; // 5–10 Sekunden
         setTimeout(function () {
-            fetchAndSendNewEntry();
+            checkForUpdate();
             scheduleRandomSync();
         }, randomDelay);
     }

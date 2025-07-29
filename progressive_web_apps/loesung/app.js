@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // entfernt (zu Service Worker verschoben)
     /*
-    function fetchAndSendNewEntry() {
+    function checkForUpdate() {
         fetch("https://wt1.mirolab.hs-bochum.de/update.php")
             .then(function (response) { return response.json() })
             .then(function (data) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (err) { console.error('Service Worker Fetch Error:', err) });
     }
 
-    function scheduleRandomSync() {
+    function checkForUpdate() {
         const randomDelay = Math.floor(Math.random() * (10 - 5 + 1) + 2) * 1000; // 5–10 Sekunden
         setTimeout(function () {
             fetchAndSendNewEntry();
@@ -72,17 +72,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // neu
     if ('serviceWorker' in navigator) {
+        // BEACHTEN: "loyal-quest" muss durch den eigenen Benutzernamen ersetzt werden!
         navigator.serviceWorker.register('/loyal-quest/service-worker.js')
             .then(function () { console.log('Service Worker registriert') })
             .catch(function (err) { console.error('Service Worker Fehler:', err) });
+
+
+        navigator.serviceWorker.ready.then(function (registration) {
+            registration.active.postMessage({myvariable: "Hello"});
+        });
+
+        navigator.serviceWorker.addEventListener('message', function (event) {
+            if (event.data?.myvariable) {
+                console.log("Vom Service Worker erhalten: " + event.data.myvariable);
+            }
+            if (event.data?.type === 'new-entry') {
+                syncData();
+            }
+        });
+
     }
-
-    navigator.serviceWorker.addEventListener('message', function (event) {
-        if (event.data?.type === 'new-entry') {
-            syncData()
-        }
-    });
-
-
 
 });

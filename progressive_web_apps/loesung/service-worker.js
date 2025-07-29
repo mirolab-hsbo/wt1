@@ -1,6 +1,6 @@
 
 
-function fetchAndSendNewEntry() {
+function checkForUpdate() {
     fetch("https://wt1.mirolab.hs-bochum.de/update.php")
         .then(function (response) { return response.json() })
         .then(function (data) {
@@ -14,7 +14,7 @@ function fetchAndSendNewEntry() {
 function scheduleRandomSync() {
     const randomDelay = Math.floor(Math.random() * (10 - 5 + 1) + 2) * 1000; // 5–10 Sekunden
     setTimeout(function () {
-        fetchAndSendNewEntry();
+        checkForUpdate();
         scheduleRandomSync();
     }, randomDelay);
 }
@@ -34,4 +34,10 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', function (event) {
     event.waitUntil(clients.claim());
     scheduleRandomSync();
+});
+
+self.addEventListener("message", function(event){
+    if(event.data?.myvariable){
+        sendMessageToClients({ myvariable: event.data.myvariable + " World!" });
+    }
 });
