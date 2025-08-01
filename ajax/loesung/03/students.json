@@ -1,0 +1,54 @@
+{
+    "students": [
+        {
+            "matrnr": 1,
+            "name": "Max Mustermann",
+            "semester": 1
+        },
+        {
+            "matrnr": 2,
+            "name": "Erika Mustermann",
+            "semester": 3
+        },
+        {
+            "matrnr": 3,
+            "name": "Ali Yilmaz",
+            "semester": 2
+        },
+        {
+            "matrnr": 4,
+            "name": "Laura Schmidt",
+            "semester": 4
+        },
+        {
+            "matrnr": 5,
+            "name": "Jonas Becker",
+            "semester": 6
+        },
+        {
+            "matrnr": 6,
+            "name": "Fatima Khan",
+            "semester": 1
+        },
+        {
+            "matrnr": 7,
+            "name": "Tom Schneider",
+            "semester": 5
+        },
+        {
+            "matrnr": 8,
+            "name": "Sofia Alvarez",
+            "semester": 3
+        },
+        {
+            "matrnr": 9,
+            "name": "Chen Wei",
+            "semester": 2
+        },
+        {
+            "matrnr": 10,
+            "name": "Anna Müller",
+            "semester": 7
+        }
+    ]
+}

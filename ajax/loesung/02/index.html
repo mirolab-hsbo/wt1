@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax-Test</title>
+</head>
+
+<body>
+    <p>Bitte in die Konsole schauen.</p>
+    <script type="text/javascript">
+        fetch("api.php")
+            .then(function(res){
+                return res.text()
+            })
+            .then(function (res) {
+                console.log(res)
+            })
+            .catch(function (err) {
+                console.log("Fehler", err)
+            })
+    </script>
+</body>
+
+</html>
