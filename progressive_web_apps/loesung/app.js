@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function syncData() {
-        fetch('https://wt1.mirolab.hs-bochum.de/news.php')
+        fetch('https://10.102.10.17/news.php')
             .then(function (response) { return response.json() })
             .then(function (data) {
                 newsData.push(data)
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // entfernt (zu Service Worker verschoben)
     /*
     function checkForUpdate() {
-        fetch("https://wt1.mirolab.hs-bochum.de/update.php")
+        fetch("https://10.102.12.79/update.php")
             .then(function (response) { return response.json() })
             .then(function (data) {
                 if (data.update_available) {
@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // neu
     if ('serviceWorker' in navigator) {
-        // BEACHTEN: "loyal-quest" muss durch den eigenen Benutzernamen ersetzt werden!
-        navigator.serviceWorker.register('/loyal-quest/service-worker.js')
+        // BEACHTEN: "spectacular-streamer" muss durch den eigenen Benutzernamen ersetzt werden!
+        navigator.serviceWorker.register('/spectacular-streamer/service-worker.js')
             .then(function () { console.log('Service Worker registriert') })
             .catch(function (err) { console.error('Service Worker Fehler:', err) });
 

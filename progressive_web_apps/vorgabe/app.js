@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function syncData() {
-        fetch('https://wt1.mirolab.hs-bochum.de/news.php')
+        fetch('https://10.102.10.17/news.php')
             .then(function (response) { return response.json() })
             .then(function (data) {
                 newsData.push(data)
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function checkForUpdate() {
-        fetch("https://wt1.mirolab.hs-bochum.de/update.php")
+        fetch("https://10.102.10.17/update.php")
             .then(function (response) { return response.json() })
             .then(function (data) {
                 if (data.update_available) {
