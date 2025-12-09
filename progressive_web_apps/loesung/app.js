@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function syncData() {
-        fetch('https://10.102.10.17/news.php')
+        fetch('http://127.0.0.1/news.php')
             .then(function (response) { return response.json() })
             .then(function (data) {
                 newsData.push(data)
@@ -41,39 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // entfernt (zu Service Worker verschoben)
-    /*
-    function checkForUpdate() {
-        fetch("https://10.102.12.79/update.php")
-            .then(function (response) { return response.json() })
-            .then(function (data) {
-                if (data.update_available) {
-                    syncData()
-                }
-            })
-            .catch(function (err) { console.error('Service Worker Fetch Error:', err) });
-    }
-
-    function checkForUpdate() {
-        const randomDelay = Math.floor(Math.random() * (10 - 5 + 1) + 2) * 1000; // 5–10 Sekunden
-        setTimeout(function () {
-            fetchAndSendNewEntry();
-            scheduleRandomSync();
-        }, randomDelay);
-    }
-    */
-
     deleteButton.addEventListener('click', deleteLocalData);
 
     // neu
     loadFromLocalStorage();
-    // wird nicht mehr benötigt
-    //scheduleRandomSync();
 
     // neu
     if ('serviceWorker' in navigator) {
-        // BEACHTEN: "spectacular-streamer" muss durch den eigenen Benutzernamen ersetzt werden!
-        navigator.serviceWorker.register('/spectacular-streamer/service-worker.js')
+        navigator.serviceWorker.register('/service-worker.js')
             .then(function () { console.log('Service Worker registriert') })
             .catch(function (err) { console.error('Service Worker Fehler:', err) });
 

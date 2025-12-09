@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function syncData() {
-        fetch('https://10.102.10.17/news.php')
+        fetch('http://127.0.0.1/news.php')
             .then(function (response) { return response.json() })
             .then(function (data) {
                 newsData.push(data)
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function checkForUpdate() {
-        fetch("https://10.102.10.17/update.php")
+        fetch("http://127.0.0.1/update.php")
             .then(function (response) { return response.json() })
             .then(function (data) {
                 if (data.update_available) {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function scheduleRandomSync() {
-        const randomDelay = Math.floor(Math.random() * (10 - 5 + 1) + 2) * 1000; // 5–10 Sekunden
+        const randomDelay = (Math.floor(Math.random() * 5) + 1) * 1000; // 1-5 Sekunden
         setTimeout(function () {
             checkForUpdate();
             scheduleRandomSync();
