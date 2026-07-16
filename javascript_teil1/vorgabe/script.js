@@ -1,0 +1,1 @@
+alert("Die JavaScript-Datei wurde korrekt eingebunden!");
