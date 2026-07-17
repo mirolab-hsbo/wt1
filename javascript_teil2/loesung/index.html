@@ -76,26 +76,25 @@
         }
 
         function guess() {
-
             const guess = parseInt(guessInput.value);
 
-            if (isNaN(guess)) {
-                message.textContent =
-                    "Bitte gib eine gültige Zahl ein.";
-                return;
-            }
+            checkGuess(guess);
+        }
 
+        function checkGuess(guessedNumber) {
 
-            if (guess < secretNumber) {
-                message.textContent =
-                    "Die gesuchte Zahl ist größer.";
-            } else if (guess > secretNumber) {
-                message.textContent =
-                    "Die gesuchte Zahl ist kleiner.";
-            } else {
+            if (guessedNumber == secretNumber) {
                 message.textContent =
                     "Richtig! Du hast die Zahl erraten!";
 
+            }
+            else if (guessedNumber < secretNumber) {
+                message.textContent =
+                    "Die gesuchte Zahl ist größer.";
+            }
+            else {
+                message.textContent =
+                    "Die gesuchte Zahl ist kleiner.";
             }
         }
 
