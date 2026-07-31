@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtechnologien 1</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <p class="university">Hochschule Bochum</p>
+            <h1>Webtechnologien 1</h1>
+            <p class="subtitle">
+                Grundlagen von HTML, CSS, JavaScript, PHP und modernen Webanwendungen
+            </p>
+        </div>
+
+        <nav>
+            <a href="#overview">Übersicht</a>
+            <a href="#assignments">Aufgaben</a>
+            <a href="#administration">Administration</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section  class="card">
+            <h2>Willkommen zurück, Platzhaltername!</h2>
+        </section>
+
+        <section id="overview" class="card">
+            <h2>Kursübersicht</h2>
+
+            <div class="course-data">
+                <div>
+                    <strong>Semester</strong>
+                    <span>Wintersemester</span>
+                </div>
+
+                <div>
+                    <strong>Dozentin</strong>
+                    <span>Prof. Dr. Carsten Köhn</span>
+                </div>
+
+                <div>
+                    <strong>Übungs-Raum</strong>
+                    <span>Labor C6-05</span>
+                </div>
+            </div>
+
+            <p>
+                In diesem Kurs werden die technischen Grundlagen des World Wide
+                Web behandelt. Die Studierenden erstellen eigene Webseiten,
+                gestalten responsive Benutzeroberflächen und lernen grundlegende
+                Konzepte der client- und serverseitigen Programmierung kennen.
+            </p>
+        </section>
+
+        <section id="assignments" class="card">
+            <h2>Aktuelle Aufgaben</h2>
+
+            <article class="assignment">
+                <div>
+                    <h3>Mini-Projekt: Interaktive Webanwendung</h3>
+                    <p>
+                        Entwickeln Sie in eine einfache
+                        browserbasierte Anwendung.
+                    </p>
+                </div>
+
+                <p class="deadline">
+                    Abgabe:
+                    <strong>30. Oktober 2025</strong>
+                </p>
+            </article>
+        </section>
+
+        <section id="administration" class="admin-area">
+            <div class="admin-heading">
+                <div>
+                    <p class="role-label">Nur für administrative Rollen</p>
+                    <h2>Bearbeitung und Benotung</h2>
+                </div>
+
+                <span class="lock">Geschützter Bereich</span>
+            </div>
+
+            <p>
+                Dieser Bereich ist ausschließlich für Lehrende und berechtigte Mitarbeitende sichtbar.
+            </p>
+
+            <div class="admin-grid">
+                <article>
+                    <h3>Abgaben verwalten</h3>
+                    <p>
+                        Eingereichte Lösungen prüfen, kommentieren und zur
+                        Überarbeitung zurückgeben.
+                    </p>
+                    <a href="#">Abgaben öffnen</a>
+                </article>
+
+                <article>
+                    <h3>Leistungen bewerten</h3>
+                    <p>
+                        Punkte, Noten und individuelles Feedback für
+                        Studierende eintragen.
+                    </p>
+                    <a href="#">Bewertung öffnen</a>
+                </article>
+
+                <article>
+                    <h3>Kurs bearbeiten</h3>
+                    <p>
+                        Termine, Materialien und Aufgabenstellungen des
+                        Kurses aktualisieren.
+                    </p>
+                    <a href="#">Kurseinstellungen</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Webtechnologien 1 · Hochschule Bochum</p>
+    </footer>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f5f8;
+            color: #253044;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 48px max(24px, calc((100% - 1050px) / 2));
+            background: #173b67;
+            color: white;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            line-height: 1;
+        }
+
+        .university {
+            margin-bottom: 12px;
+            color: #bcd7f4;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            max-width: 650px;
+            color: #dceafa;
+            font-size: 1.15rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        nav a {
+            padding: 8px 14px;
+            border: 1px solid #7898bd;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #173b67;
+        }
+
+        main {
+            width: min(1050px, calc(100% - 40px));
+            margin: 36px auto;
+        }
+
+        .card,
+        .admin-area {
+            margin-bottom: 28px;
+            padding: 28px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 18px rgba(22, 42, 70, 0.08);
+        }
+
+        .course-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin: 22px 0;
+        }
+
+        .course-data div {
+            padding: 16px;
+            border-left: 4px solid #2c78c4;
+            background: #edf5fc;
+        }
+
+        .course-data strong,
+        .course-data span {
+            display: block;
+        }
+
+        .material-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .material-list li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid #dfe5ec;
+        }
+
+        .material-list span {
+            display: inline-grid;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e5eff9;
+            color: #174e86;
+            font-weight: bold;
+            place-items: center;
+        }
+
+        .assignment {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 20px 0;
+            border-bottom: 1px solid #dfe5ec;
+        }
+
+        .assignment:last-child {
+            border-bottom: 0;
+        }
+
+        .deadline {
+            min-width: 150px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff4d6;
+        }
+
+        .admin-area {
+            border: 3px solid #8c3d78;
+            background: #fff5fc;
+        }
+
+        .admin-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .role-label {
+            margin-bottom: 4px;
+            color: #872d6e;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .lock {
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #872d6e;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .admin-grid article {
+            padding: 20px;
+            border: 1px solid #deb5d4;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .admin-grid a {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: #872d6e;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 28px;
+            background: #172333;
+            color: #d5dde8;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 750px) {
+
+            .assignment,
+            .admin-heading {
+                display: block;
+            }
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lock {
+                display: inline-block;
+                margin-bottom: 16px;
+            }
+
+            .deadline {
+                width: fit-content;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
